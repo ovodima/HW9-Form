@@ -41,25 +41,21 @@
     color: white;
 }
 
-.todo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
 .todo-item {
-    min-width: 30%;
-    list-style: none;
+  
+  min-width: 30%;
+  list-style: none;
 }
 
 .todo {
-    margin: 0.5rem;
-    background: rgb(243, 247, 2);
-    color: black;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 80vh;
+  background: rgb(243, 247, 2);
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
   }
   
   .todo li {

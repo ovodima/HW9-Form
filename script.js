@@ -60,20 +60,17 @@ const setStateTodos = (target) => {
 
     const parent = target.parentElement
     if(parent) {
-        parent.classList.add('green')
+        parent.classList.toggle('green')
     } 
-    target.addEventListener('click', () => {
-        parent.style.background = 'rgb(243, 227, 4)'
-    })
+    else if(parent.classList = 'green') {
+        parent.classList.toggle('green')
+    }
 }
 
 const trashTodo = (target) => {
     const parent = target.parentElement
-    const timeout = 800
 
     parent.classList = 'fall'
-
-    setTimeout(() => {
-        parent.remove()
-    }, timeout)
+    parent.remove()
+    
 }
