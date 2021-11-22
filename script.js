@@ -16,7 +16,7 @@ main.addEventListener('click', (e) => {
 
         
     }
-    console.log('input.length :>> ', );
+    
     
 })
 
@@ -46,7 +46,7 @@ const createTodoItem = (input, list) => {
 
 todoList.addEventListener('click', (e) => {
     let target = e.target
-    console.log('target.classList[0] :>> ', target.classList[0]);
+    
 
     if(target.classList[0] === 'completed-button') {
         setStateTodos(target)
