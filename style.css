@@ -54,7 +54,7 @@
 
 .todo {
     margin: 0.5rem;
-    background: rgb(219, 209, 152);
+    background: rgb(243, 247, 2);
     color: black;
     font-size: 1.5rem;
     display: flex;
@@ -99,4 +99,12 @@
   .fall {
       transform: translateY(8rem) rotateZ(20deg);
       opacity: 0;
+  }
+
+  .green {
+    background: rgb(56, 228, 56);
+  }
+
+  .yellow{
+    background: rgb(243, 227, 4);
   }

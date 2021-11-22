@@ -8,10 +8,15 @@ main.addEventListener('click', (e) => {
 
     if (target.type === 'submit') {
         e.preventDefault()
-        createTodoItem(input, todoList)
+        if(input.value.length === 0) {
+            input.value = 'Empty'
+        } else {
+            createTodoItem(input, todoList)
+        }
+
         
     }
-    
+    console.log('input.length :>> ', );
     
 })
 
@@ -36,7 +41,7 @@ const createTodoItem = (input, list) => {
     todoDiv.append(trashButton)
 
     list.append(todoDiv)
-    input.value = ' '
+    input.value = ''
 }
 
 todoList.addEventListener('click', (e) => {
@@ -44,8 +49,31 @@ todoList.addEventListener('click', (e) => {
     console.log('target.classList[0] :>> ', target.classList[0]);
 
     if(target.classList[0] === 'completed-button') {
-        const li = target.parentElement
-        li.style.background = 'green'
+        setStateTodos(target)
+    } else if (target.classList[0] === 'trash-button') {
+        trashTodo(target)
     }
     
 })
+
+const setStateTodos = (target) => {
+
+    const parent = target.parentElement
+    if(parent) {
+        parent.classList.add('green')
+    } 
+    target.addEventListener('click', () => {
+        parent.style.background = 'rgb(243, 227, 4)'
+    })
+}
+
+const trashTodo = (target) => {
+    const parent = target.parentElement
+    const timeout = 800
+
+    parent.classList = 'fall'
+
+    setTimeout(() => {
+        parent.remove()
+    }, timeout)
+}
