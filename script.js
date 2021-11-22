@@ -38,3 +38,14 @@ const createTodoItem = (input, list) => {
     list.append(todoDiv)
     input.value = ' '
 }
+
+todoList.addEventListener('click', (e) => {
+    let target = e.target
+    console.log('target.classList[0] :>> ', target.classList[0]);
+
+    if(target.classList[0] === 'completed-button') {
+        const li = target.parentElement
+        li.style.background = 'green'
+    }
+    
+})
