@@ -13,11 +13,7 @@ main.addEventListener('click', (e) => {
         } else {
             createTodoItem(input, todoList)
         }
-
-        
     }
-    
-    
 })
 
 const createTodoItem = (input, list) => {
@@ -69,8 +65,5 @@ const setStateTodos = (target) => {
 
 const trashTodo = (target) => {
     const parent = target.parentElement
-
-    parent.classList = 'fall'
     parent.remove()
-    
 }
