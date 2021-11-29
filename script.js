@@ -12,11 +12,12 @@ main.addEventListener("click", (e) => {
   if (target.type === "submit") {
     e.preventDefault();
     if (valid(input, regEx)) {
-      input.classList.toggle("valid");
-
-      createTodoItem(input, todoList);
+        input.classList.toggle("invalid");
+        input.classList.toggle("valid");
+        createTodoItem(input, todoList);
     } else if (inValid(input, regEx)) {
-      props.classList.toggle("invalid");
+        input.classList.toggle("valid");
+        input.classList.toggle("invalid");
     }
   }
 });

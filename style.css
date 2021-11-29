@@ -28,11 +28,11 @@
 }
 
 .invalid {
-  box-shadow: 5px 5px 5px 0 red;
+  box-shadow: 5px 5px 5px 5px red;
 }
 
 .valid {
-  box-shadow: 5px 5px 5px 0 rgb(25, 117, 7);
+  box-shadow: 5px 5px 5px 5px rgb(25, 117, 7);
 }
 
 .todo-button {
