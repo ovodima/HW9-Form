@@ -3,33 +3,44 @@ const input = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todo-list");
 const form = document.querySelector(".todo-form");
 
+const regEx = /^[a-zA-Z0-9 ]{2,15}$/;
+
 main.addEventListener("click", (e) => {
   e.preventDefault();
   let target = e.target;
 
-  const regEx = /^[a-zA-Z0-9 ]{2,15}$/;
-
-  if (target.type === "submit") {
-    e.preventDefault();
+  if (target.type === "submit" || target.type === "input") {
     if (valid(input, regEx)) {
-        input.classList.toggle("invalid");
-        input.classList.toggle("valid");
-        createTodoItem(input, todoList);
-    } else if (inValid(input, regEx)) {
-        input.classList.toggle("valid");
-        input.classList.toggle("invalid");
+      createTodoItem(input, todoList);
+      return;
+    } else {
+      inValid(input, regEx);
+      return
     }
+  }
+});
+
+input.addEventListener("input", () => {
+  if (valid(input, regEx)) {
+    return;
+  } else {
+    inValid(input, regEx);
+    return
   }
 });
 
 const valid = (props, reg) => {
   if (reg.test(props.value)) {
+    props.style.color = "green";
+    props.style.border = "2px solid green";
     return true;
   }
 };
 
 const inValid = (props, reg) => {
   if (!reg.test(props.value)) {
+    props.style.color = "red";
+    props.style.border = "2px solid red";
     return false;
   }
 };

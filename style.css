@@ -25,15 +25,10 @@
     font-size: 2rem;
     border: none;
     background: white;
+    outline: none;
 }
 
-.invalid {
-  box-shadow: 5px 5px 5px 5px red;
-}
 
-.valid {
-  box-shadow: 5px 5px 5px 5px rgb(25, 117, 7);
-}
 
 .todo-button {
     color: rgb(16, 243, 8);
